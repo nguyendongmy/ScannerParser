@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GTPService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://upload.mygws.com/GTPWCF1/GTPService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://upload.mygws.com/GTPWCF1/GTPService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://upload.mygws.com/GTPWCF1/GTPService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGTPService_ShadowPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShadowPassword" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_ShadowPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShadowPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_getShadowPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:getShadowPassword" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_getShadowPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getShadowPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_ValidateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUser" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_ValidateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_tblFTPFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:tblFTPFile" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_tblFTPFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:tblFTPFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_UpdatetbFTPFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatetbFTPFile" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_UpdatetbFTPFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatetbFTPFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_UpdateFileScannerStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFileScannerStatus" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_UpdateFileScannerStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFileScannerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_UpdatetbFTPFileUploadTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatetbFTPFileUploadTime" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_UpdatetbFTPFileUploadTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatetbFTPFileUploadTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_tblFTPTrasaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:tblFTPTrasaction" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_tblFTPTrasaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:tblFTPTrasactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_tblDBStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:tblDBStatus" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_tblDBStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:tblDBStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetDBStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDBStatus" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetDBStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDBStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_CheckIsUserinRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckIsUserinRole" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_CheckIsUserinRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckIsUserinRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetCampaign_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCampaign" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetCampaign_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCampaignResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_deletetblFTPFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:deletetblFTPFile" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_deletetblFTPFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deletetblFTPFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_deleteFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteFile" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_deleteFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetMarket_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarket" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetMarket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMarketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_updateTotalFailed_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateTotalFailed" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_updateTotalFailed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateTotalFailedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_countFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:countFile" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_countFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:countFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_updateTotalUploaded_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateTotalUploaded" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_updateTotalUploaded_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateTotalUploadedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_deleteTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_deleteTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_AddMarket_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMarket" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_AddMarket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMarketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_completeTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:completeTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_completeTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:completeTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_getVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVersion" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_getVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetUserAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccount" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetUserAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetFileStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileStatus" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetFileStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_ExecuteQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteQuery" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_ExecuteQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_isFileExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:isFileExist" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_isFileExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isFileExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProject" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClient" />
+  </wsdl:message>
+  <wsdl:message name="IGTPService_GetClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGTPService">
+    <wsdl:operation name="ShadowPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/ShadowPassword" message="tns:IGTPService_ShadowPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/ShadowPasswordResponse" message="tns:IGTPService_ShadowPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getShadowPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/getShadowPassword" message="tns:IGTPService_getShadowPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/getShadowPasswordResponse" message="tns:IGTPService_getShadowPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/ValidateUser" message="tns:IGTPService_ValidateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/ValidateUserResponse" message="tns:IGTPService_ValidateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="tblFTPFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/tblFTPFile" message="tns:IGTPService_tblFTPFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/tblFTPFileResponse" message="tns:IGTPService_tblFTPFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatetbFTPFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/UpdatetbFTPFile" message="tns:IGTPService_UpdatetbFTPFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/UpdatetbFTPFileResponse" message="tns:IGTPService_UpdatetbFTPFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFileScannerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/UpdateFileScannerStatus" message="tns:IGTPService_UpdateFileScannerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/UpdateFileScannerStatusResponse" message="tns:IGTPService_UpdateFileScannerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatetbFTPFileUploadTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/UpdatetbFTPFileUploadTime" message="tns:IGTPService_UpdatetbFTPFileUploadTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/UpdatetbFTPFileUploadTimeResponse" message="tns:IGTPService_UpdatetbFTPFileUploadTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="tblFTPTrasaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/tblFTPTrasaction" message="tns:IGTPService_tblFTPTrasaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/tblFTPTrasactionResponse" message="tns:IGTPService_tblFTPTrasaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="tblDBStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/tblDBStatus" message="tns:IGTPService_tblDBStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/tblDBStatusResponse" message="tns:IGTPService_tblDBStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDBStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/GetDBStatus" message="tns:IGTPService_GetDBStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/GetDBStatusResponse" message="tns:IGTPService_GetDBStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIsUserinRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/CheckIsUserinRole" message="tns:IGTPService_CheckIsUserinRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/CheckIsUserinRoleResponse" message="tns:IGTPService_CheckIsUserinRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampaign">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/GetCampaign" message="tns:IGTPService_GetCampaign_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/GetCampaignResponse" message="tns:IGTPService_GetCampaign_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deletetblFTPFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/deletetblFTPFile" message="tns:IGTPService_deletetblFTPFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/deletetblFTPFileResponse" message="tns:IGTPService_deletetblFTPFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/deleteFile" message="tns:IGTPService_deleteFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/deleteFileResponse" message="tns:IGTPService_deleteFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/GetMarket" message="tns:IGTPService_GetMarket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/GetMarketResponse" message="tns:IGTPService_GetMarket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTotalFailed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/updateTotalFailed" message="tns:IGTPService_updateTotalFailed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/updateTotalFailedResponse" message="tns:IGTPService_updateTotalFailed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="countFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/countFile" message="tns:IGTPService_countFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/countFileResponse" message="tns:IGTPService_countFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTotalUploaded">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/updateTotalUploaded" message="tns:IGTPService_updateTotalUploaded_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/updateTotalUploadedResponse" message="tns:IGTPService_updateTotalUploaded_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/deleteTransaction" message="tns:IGTPService_deleteTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/deleteTransactionResponse" message="tns:IGTPService_deleteTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMarket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/AddMarket" message="tns:IGTPService_AddMarket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/AddMarketResponse" message="tns:IGTPService_AddMarket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="completeTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/completeTransaction" message="tns:IGTPService_completeTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/completeTransactionResponse" message="tns:IGTPService_completeTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/getVersion" message="tns:IGTPService_getVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/getVersionResponse" message="tns:IGTPService_getVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/GetUserAccount" message="tns:IGTPService_GetUserAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/GetUserAccountResponse" message="tns:IGTPService_GetUserAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/GetFileStatus" message="tns:IGTPService_GetFileStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/GetFileStatusResponse" message="tns:IGTPService_GetFileStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/ExecuteQuery" message="tns:IGTPService_ExecuteQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/ExecuteQueryResponse" message="tns:IGTPService_ExecuteQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/GetTransaction" message="tns:IGTPService_GetTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/GetTransactionResponse" message="tns:IGTPService_GetTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isFileExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/isFileExist" message="tns:IGTPService_isFileExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/isFileExistResponse" message="tns:IGTPService_isFileExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/GetProject" message="tns:IGTPService_GetProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/GetProjectResponse" message="tns:IGTPService_GetProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGTPService/GetClient" message="tns:IGTPService_GetClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGTPService/GetClientResponse" message="tns:IGTPService_GetClient_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IGTPService" type="tns:IGTPService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ShadowPassword">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/ShadowPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getShadowPassword">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/getShadowPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tblFTPFile">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/tblFTPFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatetbFTPFile">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/UpdatetbFTPFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFileScannerStatus">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/UpdateFileScannerStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatetbFTPFileUploadTime">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/UpdatetbFTPFileUploadTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tblFTPTrasaction">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/tblFTPTrasaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tblDBStatus">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/tblDBStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDBStatus">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/GetDBStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIsUserinRole">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/CheckIsUserinRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampaign">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/GetCampaign" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletetblFTPFile">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/deletetblFTPFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFile">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/deleteFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarket">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/GetMarket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTotalFailed">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/updateTotalFailed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="countFile">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/countFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTotalUploaded">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/updateTotalUploaded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteTransaction">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/deleteTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMarket">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/AddMarket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="completeTransaction">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/completeTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/getVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAccount">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/GetUserAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileStatus">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/GetFileStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQuery">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/ExecuteQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/GetTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isFileExist">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/isFileExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProject">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/GetProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClient">
+      <soap:operation soapAction="http://tempuri.org/IGTPService/GetClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GTPService">
+    <wsdl:port name="BasicHttpBinding_IGTPService" binding="tns:BasicHttpBinding_IGTPService">
+      <soap:address location="http://upload.mygws.com/GTPWCF1/GTPService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

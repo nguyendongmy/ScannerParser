@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="_ShadowPassword">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="date_created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_shadow" type="xs:int" />
+      <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="type" type="xs:int" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="_ShadowPassword" nillable="true" type="tns:_ShadowPassword" />
+  <xs:complexType name="ArrayOf_ShadowPassword">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_ShadowPassword" nillable="true" type="tns:_ShadowPassword" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf_ShadowPassword" nillable="true" type="tns:ArrayOf_ShadowPassword" />
+  <xs:complexType name="ArrayOf_DBStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_DBStatus" nillable="true" type="tns:_DBStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf_DBStatus" nillable="true" type="tns:ArrayOf_DBStatus" />
+  <xs:complexType name="_DBStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MaintenanceEnd" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MaintenanceStart" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_DBStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="status_flag" type="xs:int" />
+      <xs:element minOccurs="0" name="status_notify" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="_DBStatus" nillable="true" type="tns:_DBStatus" />
+  <xs:complexType name="ArrayOf_Campaign">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_Campaign" nillable="true" type="tns:_Campaign" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf_Campaign" nillable="true" type="tns:ArrayOf_Campaign" />
+  <xs:complexType name="_Campaign">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="campaign_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="_Campaign" nillable="true" type="tns:_Campaign" />
+  <xs:complexType name="ArrayOf_MarketName">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_MarketName" nillable="true" type="tns:_MarketName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf_MarketName" nillable="true" type="tns:ArrayOf_MarketName" />
+  <xs:complexType name="_MarketName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_market" type="xs:int" />
+      <xs:element minOccurs="0" name="market_status" type="xs:int" />
+      <xs:element minOccurs="0" name="name_market" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="_MarketName" nillable="true" type="tns:_MarketName" />
+  <xs:complexType name="_GTPVersion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_version" type="xs:int" />
+      <xs:element minOccurs="0" name="isCurrent" type="xs:boolean" />
+      <xs:element minOccurs="0" name="new_features" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="release_date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="team_installed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="total_installed" type="xs:int" />
+      <xs:element minOccurs="0" name="version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="_GTPVersion" nillable="true" type="tns:_GTPVersion" />
+  <xs:complexType name="ArrayOf_AspNetUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_AspNetUser" nillable="true" type="tns:_AspNetUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf_AspNetUser" nillable="true" type="tns:ArrayOf_AspNetUser" />
+  <xs:complexType name="_AspNetUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LastActivityDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="isFTPAccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="_AspNetUser" nillable="true" type="tns:_AspNetUser" />
+  <xs:complexType name="_FTPTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Campaign" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="date_end" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="date_started" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_server_transaction" type="xs:int" />
+      <xs:element minOccurs="0" name="isCompleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="market_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="number_of_run" type="xs:int" />
+      <xs:element minOccurs="0" name="number_off_app_fail" type="xs:int" />
+      <xs:element minOccurs="0" name="total_file_uploaded" type="xs:int" />
+      <xs:element minOccurs="0" name="totalbytesuploaded" type="xs:int" />
+      <xs:element minOccurs="0" name="totalinputbytes" type="xs:int" />
+      <xs:element minOccurs="0" name="transaction_status" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="_FTPTransaction" nillable="true" type="tns:_FTPTransaction" />
+  <xs:complexType name="ArrayOf_Project">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_Project" nillable="true" type="tns:_Project" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf_Project" nillable="true" type="tns:ArrayOf_Project" />
+  <xs:complexType name="_Project">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="project_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="project_value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="_Project" nillable="true" type="tns:_Project" />
+  <xs:complexType name="ArrayOf_Client">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="_Client" nillable="true" type="tns:_Client" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf_Client" nillable="true" type="tns:ArrayOf_Client" />
+  <xs:complexType name="_Client">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="client_market_value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="_Client" nillable="true" type="tns:_Client" />
+</xs:schema>

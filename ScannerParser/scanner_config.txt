@@ -1,0 +1,31 @@
+version|18.1.8
+database_name|Test_Common_ScnrParse
+sql_connection|Data Source=(local);Initial Catalog=master;Integrated Security=True;User ID=sa;Password=gwspass;
+sql_connection_gapp|Data Source=(local);Initial Catalog=GAPP;Integrated Security=True;User ID=sa;Password=gwspass;
+SQL3KeyValueDotNet_v2.dll_path|SQL3KeyValueDotNet_v2
+RECaddNoS_Threshold_RSSI|10
+RECaddNoS_Threshold_Operator|10
+SpectrumScanMinimumRssiThresholdOutput_Band46|-115
+SpectrumScanMinimumRssiThresholdOutput_Band66|-110
+SpectrumScanMinimumRssiThresholdOutput_Band71|-110
+CDMA_ScanID_Maximum_Duration|2
+UMTS_ScanID_Maximum_Duration|2
+LTE_ScanID_Maximum_Duration|2
+LTE_ScanID_Maximum_Duration1|5
+Tier1_Operator|Default|AT&T:LTE(700,850,1900,2100,2300),UMTS(700,850,1900,2100);T-Mobile:LTE(600,700,850,1900,2100),UMTS(700,850,1900,2100);Sprint:LTE(700,850,1900,2100,2500),CDMA(850,1900,2100);Verizon:LTE(700,850,1900,2100),CDMA(850,1900,2100)
+Tier1_Operator|AT&T BM|AT&T:LTE(700,850,1900,2100,2300),UMTS(700,850,1900,2100);T-Mobile:LTE(600,700,850,1900,2100),UMTS(700,850,1900,2100);Sprint:LTE(700,850,1900,2100,2500),CDMA(850,1900,2100);Verizon:LTE(700,850,1900,2100),CDMA(850,1900,2100)
+Tier1_Operator|BELL BM|Bell-Telus:LTE(700,850,1900,2100,2600),UMTS(700,850,1900,2100);Freedom:LTE(700,850,1900,2100,2600),UMTS(700,850,1900,2100);Rogers:LTE(700,850,1900,2100,2600),UMTS(700,850,1900,2100);Videotron:LTE(700,850,1900,2100,2600),UMTS(700,850,1900,2100)
+Tier1_Operator|UK BM|EE:LTE(700,800,900,1800,2000,2100,2600,3500);O2:LTE(700,800,900,1800,2000,2100,2600,3500),UMTS(800,900,1800,2100);Three:LTE(700,800,900,1800,2000,2100,2600,3500),UMTS(800,900,1800,2100);Vodafone:LTE(700,800,900,1800,2000,2100,2600,3500),UMTS(800,900,1800,2100)
+
+SpectrumScanMinimumFreqThresholdOutput_Band40|2310000
+SpectrumScanMaximumFreqThresholdOutput_Band40|2320000
+SpectrumScanMinimumFreqThresholdOutput_Band66|2170000
+SpectrumScanMaximumFreqThresholdOutput_Band66|2180000
+
+
+SpectrumScanFreqThresholdOutput_Band40|2310000,2320000;2350000,2360000;
+SpectrumScanFreqThresholdOutput_Band14|760000,765000;788000,789000;
+
+
+
+
