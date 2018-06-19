@@ -994,14 +994,6 @@ Public Class Scanner
                                 totalCount3040 = totalCount3040 + 1
                             End If
                         End If
-                        'aaaaaaaaaaaaaaaaaaaaaa
-                        'If drMerge("MessageType") = "10522" Then
-                        '    If filenameStr.ToUpper().IndexOf("-3030-S") > 0 Then
-                        '        totalCount3030 = totalCount3030 + 1
-                        '    ElseIf filenameStr.ToUpper().IndexOf("-3040-S") > 0 Then
-                        '        totalCount3040 = totalCount3040 + 1
-                        '    End If
-                        'End If
                         ID = Convert.ToInt32(drMerge("ID"))
                         count = count + 1
 
@@ -1029,14 +1021,6 @@ Public Class Scanner
                 cmdMerge.Dispose()
                 conMerge.Close()
 
-                'If (lastTimeStamp - firstTimeStamp).TotalMilliseconds > 0 Then
-                '    If filenameStr.ToUpper().IndexOf("-3030-S") > 0 Then
-                '        _ScanRate3030 = totalCount3030 / (lastTimeStamp - firstTimeStamp).TotalSeconds
-                '    ElseIf filenameStr.ToUpper().IndexOf("-3040-S") > 0 Then
-                '        _ScanRate3040 = totalCount3040 / (lastTimeStamp - firstTimeStamp).TotalSeconds
-                '    End If
-                'End If
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 If (lastTimeStamp - firstTimeStamp).TotalMilliseconds > 0 Then
                     If filenameStr.ToUpper().IndexOf(fileInputObj.MergePattern2) > 0 Then
                         _ScanRate3030 = totalCount3030 / (lastTimeStamp - firstTimeStamp).TotalSeconds
@@ -4339,12 +4323,6 @@ outputRecord:
 
                     myStr = _rowCount.ToString() + "|" + strBuilder.ToString()
 
-                    'If type = "LTE" And fileInputObj.FileMergeName.Trim <> "" And InputFileName.Contains("-3030-S") Then
-                    '    _FileSize3030 = _FileSize3030 + System.Text.ASCIIEncoding.ASCII.GetByteCount(myStr)
-                    'ElseIf type = "LTE" And fileInputObj.FileMergeName.Trim <> "" And InputFileName.Contains("-3040-S") Then
-                    '    _FileSize3040 = _FileSize3040 + System.Text.ASCIIEncoding.ASCII.GetByteCount(myStr)
-                    'End If
-                    'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                     If type = "LTE" And fileInputObj.FileMergeName.Trim <> "" And InputFileName.Contains(fileInputObj.MergePattern2) Then
                         _FileSize3030 = _FileSize3030 + System.Text.ASCIIEncoding.ASCII.GetByteCount(myStr)
                     ElseIf type = "LTE" And fileInputObj.FileMergeName.Trim <> "" And InputFileName.Contains(fileInputObj.MergePattern1) Then
@@ -4491,13 +4469,6 @@ lineoutputLTE:
                                 If Not ((Convert.ToDateTime(dttm) - tmpObj.StartTime).TotalMilliseconds < 0 And tmpObj.isStartLate) Then
                                     count_input_chanel = count_input_chanel + 1
                                     If (fileInputObj.FileMergeName.Trim() <> "") Then
-                                        'If tmpObj.inputFileName.IndexOf("-3040-") > 0 Then
-                                        '    count_input_chanel3040 = count_input_chanel3040 + 1
-                                        'End If
-                                        'If tmpObj.inputFileName.IndexOf("-3030-") > 0 Then
-                                        '    count_input_chanel3030 = count_input_chanel3030 + 1
-                                        'End If
-                                        'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                                         If tmpObj.inputFileName.IndexOf(fileInputObj.MergePattern1) > 0 Then
                                             count_input_chanel3040 = count_input_chanel3040 + 1
                                         End If
@@ -4550,23 +4521,6 @@ lineoutputLTE:
 
                             End If
 
-
-                            'If Convert.ToDateTime(strs(1)) > _lastLTETimeStamp3030 Then
-                            '    If InputFileName.IndexOf("-3040-") > 0 Then
-                            '        isChannelRepeatedCountMet = _LTEScannerData.channelRepeatedCount3040 > Int(count_input_chanel3040 * 2.5) - 1
-                            '        _LTEScannerData.inputChannelList.IntersectWith(LTEChannelList3040)
-                            '    End If
-                            'End If
-
-                            'If Convert.ToDateTime(strs(1)) > _lastLTETimeStamp3040 Then
-                            '    If InputFileName.IndexOf("-3030-") > 0 Then
-                            '        isChannelRepeatedCountMet = _LTEScannerData.channelRepeatedCount3030 > Int(count_input_chanel3030 * 2.5) - 1
-
-                            '        _LTEScannerData.inputChannelList.IntersectWith(LTEChannelList3030)
-
-                            '    End If
-                            'End If
-                            'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                             If Convert.ToDateTime(strs(1)) > _lastLTETimeStamp3030 Then
                                 If InputFileName.IndexOf(fileInputObj.MergePattern1) > 0 Then
                                     isChannelRepeatedCountMet = _LTEScannerData.channelRepeatedCount3040 > Int(count_input_chanel3040 * 2.5) - 1
@@ -4783,8 +4737,6 @@ lineoutputLTE:
                             End If
 
                             If _lastChannel <> strs(7) Then
-                                'If InputFileName.IndexOf("-3040-") > 0 Then
-                                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                                 If InputFileName.IndexOf(fileInputObj.MergePattern1) > 0 Then
                                     _LTEScannerData.channelRepeatedCount = _LTEScannerData.channelRepeatedCount + 1
                                 Else
@@ -6027,13 +5979,6 @@ lineoutput:
                     LTEChannelListWithTime.Add(channel + "|" + _myBand, ChannelStore)
 
                     _LTEScannerData.inputChannelList.Add(channel)
-                    'If fileInputObj.FileMergeName.Trim <> "" And OriginalFileNameStr.IndexOf("-3030-") > 0 Then
-                    '    _LTEScannerData.inputChannelList3030.Add(channel)
-                    'End If
-                    'If fileInputObj.FileMergeName.Trim <> "" And OriginalFileNameStr.IndexOf("-3040-") > 0 Then
-                    '    _LTEScannerData.inputChannelList3040.Add(channel)
-                    'End If
-                    'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                     If fileInputObj.FileMergeName.Trim <> "" And OriginalFileNameStr.IndexOf(fileInputObj.MergePattern2) > 0 Then
                         _LTEScannerData.inputChannelList3030.Add(channel)
                     End If
